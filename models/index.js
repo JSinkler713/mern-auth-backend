@@ -9,7 +9,9 @@ const configOptions = {
     useFindAndModify: false,
 };
 
-mongoose.connect(MONGO_URL, configOptions)
+let url =  MONGO_URL || 'mongodb://localhost:27017/dbnameis'
+
+mongoose.connect(url, configOptions)
     .then(() => console.log('MongoDB successfully connected...'))
     .catch(err => console.log('MongoDB connection error:', err));
 
