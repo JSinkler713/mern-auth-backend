@@ -27,6 +27,10 @@ const create = (req, res) => {
     console.log('=====> Inside POST /examples');
     console.log('=====> req.body');
     console.log(req.body); // object used for creating new example
+    console.log('----------> req.user')
+    // undefined right now, but if we use our passport middleware
+    console.log(req.user)
+
 
     db.Example.create(req.body, (err, savedExample) => {
         if (err) console.log('Error in example#create:', err);
